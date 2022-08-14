@@ -1,0 +1,35 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /aws-fcj-app/
+    destination: /home/ec2-user/AWSFCJ
+    overwrite: true
+file_exists_behavior: OVERWRITE
+
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+    
+hooks:      
+  BeforeInstall:
+    - location: deployment_scripts/before_install.sh
+      timeout: 3600
+      runas: ec2-user
+
+  Install:
+    - location: deployment_scripts/install.sh
+      timeout: 3600
+      runas: ec2-user
+
+  AfterInstall:
+    - location: deployment_scripts/after_install.sh
+      timeout: 3600
+      runas: ec2-user
+
+  ApplicationStart:
+    - location: deployment_scripts/start_server.sh
+      timeout: 3600
+      runas: ec2-user
