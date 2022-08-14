@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: /aws-fcj-app/
+  - source: /AWS-FCJ-Management/
     destination: /home/ec2-user/AWSFCJ
     overwrite: true
 file_exists_behavior: OVERWRITE
