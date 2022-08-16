@@ -11,6 +11,7 @@ DB_PASS="Dabase password"
 
 Bạn tham khảo cách kết nối từ EC2 đến RDS:
 
+```
 #!/bin/bash
 DB_HOST="aws-fcj-management.ctptlqdaofe0.ap-southeast-1.rds.amazonaws.com";
 DB_NAME="usermgt"
@@ -176,7 +177,7 @@ if [[ $? -eq 0 ]]; then
 else
     echo "MySQL connection: Fail";
 fi
-
+```
 ### AWS-DeployECS 
 - Sử dụng để deploy application with ECS Fargate
 - Deployment Blue/Green
