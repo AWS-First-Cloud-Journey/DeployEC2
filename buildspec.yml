@@ -26,5 +26,5 @@ artifacts:
   files:
     - appspec.yml
     - buildspec.yml
-    - /aws-fcj-app/*
+    - /AWS-FCJ-Management/*
     - '**/*'
